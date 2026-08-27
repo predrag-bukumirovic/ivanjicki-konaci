@@ -1,0 +1,112 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 24px;
+
+  @media (max-width: 640px) {
+    padding: 0;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 640px) {
+    top: 12px;
+    right: 12px;
+  }
+}
+
+.counter {
+  position: absolute;
+  top: 28px;
+  left: 24px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+
+  @media (max-width: 640px) {
+    top: 24px;
+    left: 16px;
+  }
+}
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 640px) {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.prev {
+  left: 24px;
+
+  @media (max-width: 640px) {
+    left: 8px;
+  }
+}
+
+.next {
+  right: 24px;
+
+  @media (max-width: 640px) {
+    right: 8px;
+  }
+}
+
+.imageWrap {
+  position: relative;
+  width: min(1100px, 90vw);
+  height: min(720px, 80vh);
+}
+
+.caption {
+  position: absolute;
+  bottom: -36px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}

@@ -1,0 +1,289 @@
+{
+  "source": "https://sr.annu-hotel.com/rs/lux-smestaj-ivanjicki-konaci-38579.html",
+  "generatedAt": "2026-08-25T00:57:05.034Z",
+  "rooms": [
+    {
+      "slug": "superior-porodicna-soba",
+      "name": "Superior Porodična Soba",
+      "size": "42 m²",
+      "maxOccupancy": 5,
+      "beds": [
+        "1 krevet za 1 osobu",
+        "1 ekstra veliki bračni krevet",
+        "1 veliki bračni krevet"
+      ],
+      "facilities": [
+        "pogled na vrt",
+        "pogled na bazen",
+        "pogled na planinu",
+        "pogled na unutrašnje dvorište",
+        "klima-uređaj",
+        "popločano dvorište",
+        "sopstveno kupatilo",
+        "flat-screen TV",
+        "zvučna izolacija",
+        "terasa",
+        "konzola za igrice - Nintendo Wii"
+      ],
+      "photos": [
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/370801753.jpg?k=f6510a96e9532814a299b70c58dc3faa45f6f60e30a43e15d0b1010acf2a6a90&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/superior-porodicna-soba-01-370801753.jpg",
+          "id": "370801753"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/370802176.jpg?k=71349f85b88e8835935667d3e399fd404fed85e2ca9e55a88ea6b75f34734cb0&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/superior-porodicna-soba-02-370802176.jpg",
+          "id": "370802176"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/370802357.jpg?k=b607bf040a627f45f328ad5ad36b1b08b35286175a7a3d3522f4c4e0d43e1c11&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/superior-porodicna-soba-03-370802357.jpg",
+          "id": "370802357"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/370802556.jpg?k=d3226ff7a75d0cc214db3f1301eba4cbc72c5f7d35b38b2e952b79660ea963c7&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/superior-porodicna-soba-04-370802556.jpg",
+          "id": "370802556"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/370802874.jpg?k=f65a28a1a3a365858047349862928003ca99be45d8eba4350d62a606a557247b&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/superior-porodicna-soba-05-370802874.jpg",
+          "id": "370802874"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/370803913.jpg?k=d3c68ac66cd4ce759fc8a35aab105aac7c39ef2dd796cc76916556e3c0975bf9&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/superior-porodicna-soba-06-370803913.jpg",
+          "id": "370803913"
+        }
+      ]
+    },
+    {
+      "slug": "studio-sa-sofom-na-izvlacenje",
+      "name": "Studio sa Sofom na Izvlačenje",
+      "size": "34 m²",
+      "maxOccupancy": 4,
+      "beds": [
+        "2 kreveta za 1 osobu",
+        "1 veliki bračni krevet"
+      ],
+      "facilities": [
+        "čajna kuhinja",
+        "sopstveno kupatilo",
+        "pogled na vrt",
+        "pogled na bazen",
+        "pogled na planinu",
+        "pogled na unutrašnje dvorište",
+        "klima-uređaj",
+        "popločano dvorište",
+        "flat-screen TV",
+        "zvučna izolacija",
+        "terasa",
+        "konzola za igrice - Nintendo Wii"
+      ],
+      "photos": [
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368343781.jpg?k=e9ffc4abe81bc47299a81ad26340e42f0a549363b463afa5dd82c19bc4a2c514&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/studio-sa-sofom-na-izvlacenje-01-368343781.jpg",
+          "id": "368343781"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368344076.jpg?k=6c44f7a5453e60bc1458c2b808b64e960961e1f9337eda0791a6983963de9941&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/studio-sa-sofom-na-izvlacenje-02-368344076.jpg",
+          "id": "368344076"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368345010.jpg?k=1fbb1a22b562a1af32ca9df97df5a97615c6d9996af4be1ae461159ddae8c1c7&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/studio-sa-sofom-na-izvlacenje-03-368345010.jpg",
+          "id": "368345010"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/423529430.jpg?k=82a57fb45f4490b5c2aef7655800fea38ee51e17075e54eb693112d510d8742c&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/studio-sa-sofom-na-izvlacenje-04-423529430.jpg",
+          "id": "423529430"
+        }
+      ]
+    },
+    {
+      "slug": "dvokrevetna-soba-sa-bracnim-krevetom-i-terasom",
+      "name": "Dvokrevetna Soba sa Bračnim Krevetom i Terasom",
+      "size": "35 m²",
+      "maxOccupancy": 2,
+      "beds": [
+        "1 veliki bračni krevet"
+      ],
+      "facilities": [
+        "pogled na vrt",
+        "pogled na bazen",
+        "pogled na planinu",
+        "pogled na unutrašnje dvorište",
+        "klima-uređaj",
+        "popločano dvorište",
+        "sopstveno kupatilo",
+        "flat-screen TV",
+        "zvučna izolacija",
+        "terasa",
+        "mini-bar",
+        "konzola za igrice - Nintendo Wii"
+      ],
+      "photos": [
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368562198.jpg?k=3b838773cbc78244ca3edaed6cfd7777aa9ca045df10ece2c73e0ae896a29281&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/dvokrevetna-soba-sa-bracnim-krevetom-i-terasom-01-368562198.jpg",
+          "id": "368562198"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368347876.jpg?k=7cc9db5f3b333bd38ff9fcfccee5e60cfeca9bc8307d87e560da8c6d951d2aa4&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/dvokrevetna-soba-sa-bracnim-krevetom-i-terasom-02-368347876.jpg",
+          "id": "368347876"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368348168.jpg?k=768dc1c014ed276cb49ea1d1ee60ede787b56a7e9044b4d5d703f53e88d86dae&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/dvokrevetna-soba-sa-bracnim-krevetom-i-terasom-03-368348168.jpg",
+          "id": "368348168"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368348458.jpg?k=757c825cffb755fd2ac90c95d97129524b7a955605e5fdfea054958be8c25638&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/dvokrevetna-soba-sa-bracnim-krevetom-i-terasom-04-368348458.jpg",
+          "id": "368348458"
+        }
+      ]
+    },
+    {
+      "slug": "deluks-trokrevetna-soba",
+      "name": "Deluks Trokrevetna Soba",
+      "size": "25 m²",
+      "maxOccupancy": 3,
+      "beds": [
+        "1 krevet za 1 osobu",
+        "1 veliki bračni krevet"
+      ],
+      "facilities": [
+        "pogled na vrt",
+        "pogled na planinu",
+        "klima-uređaj",
+        "popločano dvorište",
+        "sopstveno kupatilo",
+        "flat-screen TV",
+        "zvučna izolacija",
+        "konzola za igrice - Nintendo Wii"
+      ],
+      "photos": [
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368349565.jpg?k=2b1a641db2d9502636ddb64ef367a4dc145d935cdc51f01cb98617281c6d9661&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/deluks-trokrevetna-soba-01-368349565.jpg",
+          "id": "368349565"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368349960.jpg?k=2ab6f2901b6e8a1bebe2e71be166644e9d4aab950b4fbaee1fc7e04b69ce258b&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/deluks-trokrevetna-soba-02-368349960.jpg",
+          "id": "368349960"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368561955.jpg?k=bad3bd960639dd8e55ef36b9ab85eaee8e3b683a9082f3a03192e690431e65e6&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/deluks-trokrevetna-soba-03-368561955.jpg",
+          "id": "368561955"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368562198.jpg?k=3b838773cbc78244ca3edaed6cfd7777aa9ca045df10ece2c73e0ae896a29281&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/deluks-trokrevetna-soba-04-368562198.jpg",
+          "id": "368562198"
+        }
+      ]
+    },
+    {
+      "slug": "trokrevetna-soba-sa-terasom",
+      "name": "Trokrevetna Soba sa Terasom",
+      "size": "35 m²",
+      "maxOccupancy": 3,
+      "beds": [
+        "1 krevet za 1 osobu",
+        "1 veliki bračni krevet"
+      ],
+      "facilities": [
+        "pogled na vrt",
+        "pogled na bazen",
+        "pogled na planinu",
+        "pogled na unutrašnje dvorište",
+        "klima-uređaj",
+        "popločano dvorište",
+        "sopstveno kupatilo",
+        "flat-screen TV",
+        "zvučna izolacija",
+        "terasa",
+        "mini-bar",
+        "konzola za igrice - Nintendo Wii"
+      ],
+      "photos": [
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368562198.jpg?k=3b838773cbc78244ca3edaed6cfd7777aa9ca045df10ece2c73e0ae896a29281&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/trokrevetna-soba-sa-terasom-01-368562198.jpg",
+          "id": "368562198"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/69630816.jpg?k=9e0a4c7735707401fb090deb77937a6fa6ad11c5c8943648b06dfb4e3952a3f1&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/trokrevetna-soba-sa-terasom-02-69630816.jpg",
+          "id": "69630816"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368561955.jpg?k=bad3bd960639dd8e55ef36b9ab85eaee8e3b683a9082f3a03192e690431e65e6&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/trokrevetna-soba-sa-terasom-03-368561955.jpg",
+          "id": "368561955"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368563040.jpg?k=59698478b9d2a23e680588a761dbb8ed67da9ac9434b5412dd0ecd75718696e8&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/trokrevetna-soba-sa-terasom-04-368563040.jpg",
+          "id": "368563040"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368348458.jpg?k=757c825cffb755fd2ac90c95d97129524b7a955605e5fdfea054958be8c25638&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/trokrevetna-soba-sa-terasom-05-368348458.jpg",
+          "id": "368348458"
+        }
+      ]
+    },
+    {
+      "slug": "deluks-dvokrevetna-soba-sa-bracnim-krevetom",
+      "name": "Deluks Dvokrevetna Soba sa Bračnim Krevetom",
+      "size": "25 m²",
+      "maxOccupancy": 2,
+      "beds": [
+        "1 veliki bračni krevet"
+      ],
+      "facilities": [
+        "pogled na vrt",
+        "pogled na bazen",
+        "pogled na planinu",
+        "pogled na unutrašnje dvorište",
+        "klima-uređaj",
+        "popločano dvorište",
+        "sopstveno kupatilo",
+        "flat-screen TV",
+        "zvučna izolacija",
+        "konzola za igrice - Nintendo Wii"
+      ],
+      "photos": [
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368352534.jpg?k=01507bee608efd21e734791619437c306a401888455ccbe8729d53606f96840b&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/deluks-dvokrevetna-soba-sa-bracnim-krevetom-01-368352534.jpg",
+          "id": "368352534"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368349309.jpg?k=421310269b88c4eabe52603464dc1c73de5c4eb0de8cdaa23c7eb94b3a9416c5&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/deluks-dvokrevetna-soba-sa-bracnim-krevetom-02-368349309.jpg",
+          "id": "368349309"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368348734.jpg?k=601ca83a56e479d651576324870e2c60d690bd91291acb3c5403431844e3cb9d&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/deluks-dvokrevetna-soba-sa-bracnim-krevetom-03-368348734.jpg",
+          "id": "368348734"
+        },
+        {
+          "originalUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/368562198.jpg?k=3b838773cbc78244ca3edaed6cfd7777aa9ca045df10ece2c73e0ae896a29281&o=",
+          "localPath": "/booking/ivanjicki-konaci/images/deluks-dvokrevetna-soba-sa-bracnim-krevetom-04-368562198.jpg",
+          "id": "368562198"
+        }
+      ]
+    }
+  ]
+}

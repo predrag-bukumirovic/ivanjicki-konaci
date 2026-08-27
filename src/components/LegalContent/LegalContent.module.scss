@@ -1,0 +1,43 @@
+.section {
+  background: #fff;
+  padding: 80px 40px 96px;
+
+  @media (max-width: 640px) {
+    padding: 56px 20px 64px;
+  }
+}
+
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.updated {
+  font-size: 14px;
+  color: #9a9890;
+  margin-bottom: 48px;
+}
+
+.block {
+  & + & {
+    margin-top: 40px;
+  }
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: #171717;
+  margin-bottom: 12px;
+}
+
+.text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #5a5a55;
+
+  & + & {
+    margin-top: 12px;
+  }
+}

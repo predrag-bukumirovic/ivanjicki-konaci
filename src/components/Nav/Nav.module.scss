@@ -1,0 +1,262 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 40px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition:
+    padding 0.3s ease,
+    box-shadow 0.3s ease;
+
+  @media (max-width: 640px) {
+    padding: 0 20px;
+  }
+}
+
+.navScrolled {
+  padding: 12px 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 640px) {
+    padding: 10px 20px;
+  }
+}
+
+.logo {
+  display: flex;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+
+  @media (max-width: 1180px) {
+    gap: 18px;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 6px;
+  font-size: 18px;
+  color: #000;
+  transition: color 0.2s ease;
+
+  @media (max-width: 1180px) {
+    font-size: 15px;
+  }
+
+  &:hover {
+    color: #826953;
+  }
+}
+
+.linkActive {
+  color: #826953;
+}
+
+.underline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #826953;
+}
+
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  color: #000;
+
+  a {
+    color: #9a9890;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #171717;
+    }
+  }
+}
+
+.langActive {
+  color: #171717 !important;
+  font-weight: 600;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.menuBtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  padding: 8px;
+  margin: 0 -8px 0 0;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 39;
+  background: rgba(0, 0, 0, 0.45);
+  animation: fadeIn 0.25s ease;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 40;
+  width: min(380px, 86vw);
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #000;
+  box-shadow: -12px 0 32px rgba(0, 0, 0, 0.18);
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+
+  &.drawerOpen {
+    transform: translateX(0);
+  }
+}
+
+.drawerHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #ece9e3;
+}
+
+.drawerClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  padding: 8px;
+  margin: 0 -8px;
+}
+
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 8px 24px 0;
+  overflow-y: auto;
+}
+
+.mobileLink {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 20px 0;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 26px;
+  color: rgba(0, 0, 0, 0.55);
+  border-bottom: 1px solid #ece9e3;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #000;
+  }
+
+  li:last-child & {
+    border-bottom: none;
+  }
+}
+
+.mobileLinkIndex {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  color: #826953;
+}
+
+.mobileLink.linkActive {
+  color: #826953;
+
+  .mobileLinkIndex {
+    color: #826953;
+  }
+}
+
+.drawerFooter {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border-top: 1px solid #ece9e3;
+}
+
+.drawerCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+  background: #826953;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #6a5643;
+  }
+}
+
+.drawerContact {
+  text-align: center;
+  font-size: 14px;
+  color: #9a9890;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
