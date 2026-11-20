@@ -1,26 +1,25 @@
-import Link from "next/link";
-import { commonCopy, type Locale } from "@/lib/i18n";
+import type { ReactNode } from "react";
 import styles from "./PageHeader.module.scss";
 
 export default function PageHeader({
+  kicker,
   title,
-  subtitle,
-  locale,
+  lede,
+  children,
 }: {
+  kicker?: string;
   title: string;
-  subtitle?: string;
-  locale: Locale;
+  lede?: string;
+  /** Optional actions shown under the lede (buttons, links). */
+  children?: ReactNode;
 }) {
   return (
     <header className={styles.header}>
-      <div className={styles.container}>
-        <div className={styles.breadcrumb}>
-          <Link href="/">{commonCopy[locale].home}</Link>
-          <span>/</span>
-          <span>{title}</span>
-        </div>
+      <div className="container">
+        {kicker && <p className={styles.kicker}>{kicker}</p>}
         <h1 className={styles.title}>{title}</h1>
-        {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+        {lede && <p className={styles.lede}>{lede}</p>}
+        {children && <div className={styles.actions}>{children}</div>}
       </div>
     </header>
   );

@@ -2,19 +2,18 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import LegalContent from "@/components/LegalContent/LegalContent";
 import { getLocale } from "@/lib/server-locale";
-import type { Locale } from "@/lib/i18n";
 
 const content = {
   sr: {
     metadata: {
-      title: "Uslovi Korišćenja | Ivanjički Konaci",
+      title: "Uslovi korišćenja | Ivanjički konaci",
       description: "Uslovi korišćenja usluga i sajta Ivanjički Konaci.",
     },
-    title: "Uslovi Korišćenja",
+    title: "Uslovi korišćenja",
     updated: "25. avgust 2026.",
     sections: [
       {
-        heading: "1. Opšte Odredbe",
+        heading: "1. Opšte odredbe",
         paragraphs: [
           "Korišćenjem sajta Ivanjički Konaci i naših usluga smeštaja, prihvatate uslove navedene na ovoj stranici. Ukoliko se ne slažete sa bilo kojim delom uslova, molimo vas da ne koristite naše usluge.",
           "Zadržavamo pravo da povremeno izmenimo ove uslove. Izmene stupaju na snagu objavljivanjem na ovoj stranici.",
@@ -34,20 +33,20 @@ const content = {
         ],
       },
       {
-        heading: "4. Otkazivanje Rezervacije",
+        heading: "4. Otkazivanje rezervacije",
         paragraphs: [
           "Uslovi otkazivanja i eventualnog povraćaja sredstava zavise od termina otkazivanja u odnosu na datum dolaska, i dogovaraju se individualno prilikom rezervacije.",
         ],
       },
       {
-        heading: "5. Odgovornost Gostiju",
+        heading: "5. Odgovornost gostiju",
         paragraphs: [
           "Gosti su dužni da se prema konaku i okolini odnose odgovorno i da nadoknade eventualnu štetu nastalu njihovom krivicom tokom boravka.",
           "Broj gostiju ne sme prelaziti kapacitet naveden prilikom rezervacije, osim uz prethodnu saglasnost.",
         ],
       },
       {
-        heading: "6. Ograničenje Odgovornosti",
+        heading: "6. Ograničenje odgovornosti",
         paragraphs: [
           "Ivanjički Konaci ne snose odgovornost za gubitak ili štetu na ličnim stvarima gostiju, niti za okolnosti van naše kontrole (vremenski uslovi, viša sila i slično).",
         ],
@@ -62,14 +61,14 @@ const content = {
   },
   en: {
     metadata: {
-      title: "Terms Of Use | Ivanjicki Konaci",
+      title: "Terms of use | Ivanjicki Konaci",
       description: "Terms for using the Ivanjicki Konaci website and services.",
     },
-    title: "Terms Of Use",
+    title: "Terms of use",
     updated: "August 25, 2026",
     sections: [
       {
-        heading: "1. General Terms",
+        heading: "1. General terms",
         paragraphs: [
           "By using the Ivanjicki Konaci website and our accommodation services, you accept the terms listed on this page. If you do not agree with any part of these terms, please do not use our services.",
           "We reserve the right to update these terms from time to time. Changes become effective when published on this page.",
@@ -89,20 +88,20 @@ const content = {
         ],
       },
       {
-        heading: "4. Reservation Cancellation",
+        heading: "4. Reservation cancellation",
         paragraphs: [
           "Cancellation terms and any potential refund depend on when the cancellation is made in relation to the arrival date, and are agreed individually at the time of reservation.",
         ],
       },
       {
-        heading: "5. Guest Responsibility",
+        heading: "5. Guest responsibility",
         paragraphs: [
           "Guests must treat the room and surroundings responsibly and compensate for any damage caused by their fault during the stay.",
           "The number of guests must not exceed the capacity stated at the time of reservation, unless previously approved.",
         ],
       },
       {
-        heading: "6. Limitation Of Liability",
+        heading: "6. Limitation of liability",
         paragraphs: [
           "Ivanjicki Konaci is not responsible for loss of or damage to guests' personal belongings, or for circumstances outside our control, including weather conditions, force majeure and similar events.",
         ],
@@ -123,13 +122,17 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function UsloviKoriscenjaPage() {
-  const locale: Locale = await getLocale();
+  const locale = await getLocale();
   const t = content[locale];
 
   return (
     <main>
-      <PageHeader title={t.title} locale={locale} />
-      <LegalContent updated={t.updated} sections={t.sections} locale={locale} />
+      <PageHeader
+        kicker={locale === "sr" ? "Pravne informacije" : "Legal"}
+        title={t.title}
+        lede={`${locale === "sr" ? "Poslednja izmena" : "Last updated"}: ${t.updated}`}
+      />
+      <LegalContent sections={t.sections} />
     </main>
   );
 }

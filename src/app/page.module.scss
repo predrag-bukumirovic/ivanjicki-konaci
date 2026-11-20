@@ -1,0 +1,321 @@
+.cover {
+  object-fit: cover;
+}
+
+.section {
+  padding-top: 112px;
+
+  @media (max-width: 640px) {
+    padding-top: 72px;
+  }
+}
+
+.sectionEnd {
+  padding-bottom: 112px;
+
+  @media (max-width: 640px) {
+    padding-bottom: 72px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Hero                                                                */
+/* ------------------------------------------------------------------ */
+
+.hero {
+  padding-top: calc(var(--nav-h) + 64px);
+
+  @media (max-width: 640px) {
+    padding-top: calc(var(--nav-h) + 28px);
+  }
+}
+
+.heroText {
+  margin-bottom: 44px;
+
+  @media (max-width: 640px) {
+    margin-bottom: 32px;
+  }
+}
+
+.kicker {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.title {
+  margin-top: 14px;
+  font-family: var(--font-heading);
+  font-size: clamp(38px, 5.4vw, 72px);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+  text-wrap: balance;
+}
+
+// Lede on the left, buttons on the right — stacked on phones.
+.heroAside {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px 48px;
+  margin-top: 28px;
+
+  @media (max-width: 640px) {
+    margin-top: 18px;
+  }
+}
+
+.lede {
+  max-width: 520px;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+
+  @media (max-width: 640px) {
+    font-size: 16px;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  @media (max-width: 640px) {
+    width: 100%;
+
+    a {
+      flex: 1 1 0;
+    }
+  }
+}
+
+.heroImage {
+  position: relative;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #10141d;
+
+  @media (max-width: 760px) {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 28px;
+
+  > div {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 4px;
+    padding: 4px 24px;
+    border-left: 1px solid var(--line);
+
+    &:first-child {
+      padding-left: 0;
+      border-left: none;
+    }
+  }
+
+  dd {
+    font-family: var(--font-heading);
+    font-size: clamp(22px, 2.6vw, 30px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  dt {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 760px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 20px;
+    margin-top: 24px;
+
+    > div:nth-child(odd) {
+      padding-left: 0;
+      border-left: none;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Place                                                               */
+/* ------------------------------------------------------------------ */
+
+.place {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 40px 80px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.eyebrowTitle {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.statement {
+  margin: 14px 0 28px;
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 2.8vw, 34px);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  text-wrap: pretty;
+}
+
+.placeImage {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--wash);
+}
+
+/* ------------------------------------------------------------------ */
+/* Rooms preview — horizontal swipe row on phones                      */
+/* ------------------------------------------------------------------ */
+
+.roomRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  list-style: none;
+
+  @media (max-width: 1000px) {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 var(--gutter);
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    li {
+      flex: 0 0 min(80%, 380px);
+      scroll-snap-align: start;
+    }
+  }
+}
+
+.roomCard {
+  display: block;
+
+  &:hover .roomName {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+  }
+}
+
+.roomImage {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--wash);
+}
+
+.roomName {
+  margin-top: 16px;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.roomMeta {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------------ */
+/* Restaurant / pool rows                                              */
+/* ------------------------------------------------------------------ */
+
+.rows {
+  display: grid;
+  gap: 96px;
+
+  @media (max-width: 640px) {
+    gap: 64px;
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px 72px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rowFlip {
+  @media (min-width: 901px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+
+    .rowImage {
+      order: 2;
+    }
+  }
+}
+
+.rowImage {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--wash);
+}
+
+.rowText {
+  max-width: 460px;
+
+  p {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+}
+
+.rowTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.rowLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+  margin-top: 28px;
+}

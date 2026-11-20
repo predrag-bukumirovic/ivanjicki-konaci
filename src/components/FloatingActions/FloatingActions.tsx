@@ -1,13 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowUp, FiPhone } from "react-icons/fi";
 import type { Locale } from "@/lib/i18n";
+import { scrollToY } from "@/lib/smooth-scroll";
 import styles from "./FloatingActions.module.scss";
 
 export default function FloatingActions({ locale }: { locale: Locale }) {
   const [showTop, setShowTop] = useState(false);
+  // On the menu the buttons would sit on top of the price column on phones.
+  const isMenuPage = usePathname() === "/meni";
 
   useEffect(() => {
     const onScroll = () => setShowTop(window.scrollY > 500);
@@ -17,13 +21,15 @@ export default function FloatingActions({ locale }: { locale: Locale }) {
   }, []);
 
   return (
-    <div className={styles.stack}>
+    <div
+      className={`${styles.stack} ${isMenuPage ? styles.stackMenu : ""}`}
+    >
       <AnimatePresence>
         {showTop && (
           <motion.button
             type="button"
             className={`${styles.btn} ${styles.top}`}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={() => scrollToY(0)}
             aria-label={locale === "sr" ? "Skroluj na vrh" : "Scroll to top"}
             initial={{ opacity: 0, y: 12, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}

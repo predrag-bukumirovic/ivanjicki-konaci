@@ -1,137 +1,106 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  IoCallOutline,
-  IoCalendarOutline,
-  IoMailOutline,
-  IoRestaurantOutline,
-  IoWaterOutline,
-} from "react-icons/io5";
+import BookingBand from "@/components/BookingBand/BookingBand";
 import PageHeader from "@/components/PageHeader/PageHeader";
-import Reveal from "@/components/Reveal/Reveal";
-import CallToAction from "@/components/CallToAction/CallToAction";
 import { getLocale } from "@/lib/server-locale";
-import type { Locale } from "@/lib/i18n";
+import { site } from "@/lib/site";
 import styles from "./page.module.scss";
+
+const gallery = "/booking/ivanjicki-konaci/gallery";
 
 const content = {
   sr: {
     metadata: {
-      title: "Restoran | Ivanjički Konaci",
+      title: "Restoran i bazen | Ivanjički konaci",
       description:
-        "Restoran, bazen i organizacija proslava u objektu Ivanjički Konaci u Ivanjici.",
+        "Restoran sa domaćom kuhinjom, bazen sa pogledom i prostor za proslave u Ivanjičkim konacima, nadomak Ivanjice.",
     },
+    kicker: "Restoran i sadržaji",
     title: "Restoran",
-    subtitle:
-      "Restoran, bazen i prostor za rođendane, svadbe i druga okupljanja u mirnom ambijentu Ivanjice.",
-    imageAlt: "Doručak sa pogledom u Ivanjičkim konacima",
-    label: "Restoran I Sadržaji",
-    heading: "Hrana, pogled i prostor za trenutke koji se pamte",
-    intro:
-      "Ivanjički Konaci pored smeštaja nude restoran, bazen i mogućnost organizacije privatnih i porodičnih događaja. Sve je smešteno u prirodnom okruženju, sa pogledom na ivanjičke predele.",
-    highlights: [
-      "restoran za goste i posetioce",
-      "bazen i terasa za letnje dane",
-      "organizacija rođendana, svadbi i proslava",
-    ],
-    phoneCta: "Pozovite za dogovor",
-    emailCta: "Pošaljite upit",
+    lede: "Domaća kuhinja, terasa sa pogledom i bazen. Restoran je otvoren i za goste koji nisu u smeštaju.",
     menuCta: "Pogledaj meni",
+    heroAlt: "Doručak na terasi sa pogledom na brda",
     sections: [
       {
-        title: "Restoran",
-        text: "Domaći ambijent, terasa sa pogledom i izbor jela za goste koji žele kompletan boravak bez žurbe.",
-        image:
-          "/booking/ivanjicki-konaci/gallery/booking-galerija-10-69631083.jpg",
-        alt: "Serviran obrok na terasi restorana",
-        icon: "restaurant",
+        id: "kuhinja",
+        title: "Kuhinja",
+        text: "Doručak se služi od 08 do 12 h. Za ručak i večeru tu su čorbe, roštilj, jela po porudžbini, sveža pastrmka sa Slatine i domaći deserti, a uz to domaća i strana vina, rakije i točeno pivo.",
+        image: `${gallery}/booking-galerija-34-423346811.jpg`,
+        alt: "Daska sa pršutom i sirom i sveža salata",
+        link: { href: "/meni", label: "Ceo meni sa cenama" },
       },
       {
+        id: "bazen",
         title: "Bazen",
-        text: "Otvoren prostor za opuštanje tokom toplih dana, uz ležaljke, terasu i pogled na prirodu oko kompleksa.",
-        image: "/booking/ivanjicki-konaci/gallery/bazen.jpg",
-        alt: "Bazen i terasa u Ivanjičkim konacima",
-        icon: "pool",
+        text: "Otvoreni bazen sa ležaljkama, suncobranima i pogledom na brda oko Ivanjice. Na imanju je i dečije igralište, pa je mesto pogodno i za porodice sa decom.",
+        image: `${gallery}/booking-galerija-09-187168983.jpg`,
+        alt: "Bazen sa suncobranima i pogledom na zelena brda",
+        link: null,
       },
       {
-        title: "Organizacija Događaja",
-        text: "Prostor je pogodan za rođendane, svadbe i porodična okupljanja, uz dogovor oko termina i detalja.",
-        image: "/booking/ivanjicki-konaci/gallery/proslava.jpg",
-        alt: "Proslava pored bazena u Ivanjičkim konacima",
-        icon: "events",
+        id: "proslave",
+        title: "Proslave",
+        text: "Rođendani, svadbe i porodična okupljanja — u restoranu ili uz bazen. Termin, broj gostiju i meni dogovaramo direktno, telefonom ili emailom.",
+        image: `${gallery}/proslava.jpg`,
+        alt: "Postavljeni stolovi za proslavu pored bazena",
+        link: { href: "/kontakt", label: "Pošaljite upit" },
       },
     ],
-    eventLabel: "Proslave I Okupljanja",
-    eventHeading: "Za rođendane, svadbe i privatne događaje",
-    eventText:
-      "Za tačnu ponudu, slobodne termine, kapacitet i dogovor oko hrane najbolje je da se javite direktno telefonom ili emailom.",
+    photosTitle: "Iz restorana",
+    photos: [
+      { src: `${gallery}/booking-galerija-16-41960977.jpg`, alt: "Sala restorana sa drvenim stolovima" },
+      { src: `${gallery}/booking-galerija-12-187165353.jpg`, alt: "Restoran sa kaminom" },
+      { src: `${gallery}/booking-galerija-40-423359940.jpg`, alt: "Gosti na terasi sa pogledom" },
+      { src: `${gallery}/booking-galerija-15-69630816.jpg`, alt: "Piće na terasi iznad doline" },
+    ],
   },
   en: {
     metadata: {
-      title: "Restaurant | Ivanjicki Konaci",
+      title: "Restaurant and pool | Ivanjicki Konaci",
       description:
-        "Restaurant, pool and event organization at Ivanjicki Konaci in Ivanjica.",
+        "A restaurant with home cooking, a pool with a view and space for celebrations at Ivanjicki Konaci, just outside Ivanjica.",
     },
+    kicker: "Restaurant and amenities",
     title: "Restaurant",
-    subtitle:
-      "Restaurant, pool and space for birthdays, weddings and gatherings in the peaceful Ivanjica setting.",
-    imageAlt: "Breakfast with a view at Ivanjicki Konaci",
-    label: "Restaurant And Amenities",
-    heading: "Food, views and space for memorable moments",
-    intro:
-      "Ivanjicki Konaci offers more than accommodation: guests can enjoy the restaurant, pool and event organization for private and family gatherings. Everything is set in a calm natural environment with views of the Ivanjica landscape.",
-    highlights: [
-      "restaurant for guests and visitors",
-      "pool and terrace for warm days",
-      "birthdays, weddings and private celebrations",
-    ],
-    phoneCta: "Call to arrange",
-    emailCta: "Send inquiry",
-    menuCta: "View menu",
+    lede: "Home cooking, a terrace with a view and a pool. The restaurant is open to visitors who are not staying with us, too.",
+    menuCta: "See the menu",
+    heroAlt: "Breakfast on the terrace overlooking the hills",
     sections: [
       {
-        title: "Restaurant",
-        text: "A warm local atmosphere, terrace views and food options for guests who want a complete, easy stay.",
-        image:
-          "/booking/ivanjicki-konaci/gallery/booking-galerija-10-69631083.jpg",
-        alt: "Served meal on the restaurant terrace",
-        icon: "restaurant",
+        id: "kuhinja",
+        title: "Kitchen",
+        text: "Breakfast is served 08:00–12:00. For lunch and dinner there are soups, grilled meats, dishes to order, fresh trout from Slatina and homemade desserts — plus local and international wines, rakija and draft beer.",
+        image: `${gallery}/booking-galerija-34-423346811.jpg`,
+        alt: "Board with prosciutto and cheese and a fresh salad",
+        link: { href: "/meni", label: "Full menu with prices" },
       },
       {
+        id: "bazen",
         title: "Pool",
-        text: "An open-air place to relax during warm days, with loungers, terrace space and views of the surrounding nature.",
-        image:
-          "/booking/ivanjicki-konaci/gallery/booking-galerija-09-187168983.jpg",
-        alt: "Pool and terrace at Ivanjicki Konaci",
-        icon: "pool",
+        text: "An outdoor pool with loungers, parasols and views of the hills around Ivanjica. There is also a children's playground on the grounds, so it works well for families.",
+        image: `${gallery}/booking-galerija-09-187168983.jpg`,
+        alt: "Pool with parasols overlooking green hills",
+        link: null,
       },
       {
-        title: "Event Organization",
-        text: "The property is suitable for birthdays, weddings and family gatherings, with details arranged directly.",
-        image: "/booking/ivanjicki-konaci/gallery/proslava.jpg",
-        alt: "Event setup by the pool at Ivanjicki Konaci",
-        icon: "events",
+        id: "proslave",
+        title: "Celebrations",
+        text: "Birthdays, weddings and family gatherings — in the restaurant or by the pool. Dates, number of guests and menu are arranged directly, by phone or email.",
+        image: `${gallery}/proslava.jpg`,
+        alt: "Tables set for a celebration by the pool",
+        link: { href: "/kontakt", label: "Send an inquiry" },
       },
     ],
-    eventLabel: "Celebrations And Gatherings",
-    eventHeading: "For birthdays, weddings and private events",
-    eventText:
-      "For the exact offer, available dates, capacity and food arrangements, it is best to contact the property directly by phone or email.",
+    photosTitle: "From the restaurant",
+    photos: [
+      { src: `${gallery}/booking-galerija-16-41960977.jpg`, alt: "Dining room with wooden tables" },
+      { src: `${gallery}/booking-galerija-12-187165353.jpg`, alt: "Restaurant with a fireplace" },
+      { src: `${gallery}/booking-galerija-40-423359940.jpg`, alt: "Guests on the terrace with a view" },
+      { src: `${gallery}/booking-galerija-15-69630816.jpg`, alt: "A drink on the terrace above the valley" },
+    ],
   },
 } as const;
-
-function FeatureIcon({ icon }: { icon: "events" | "pool" | "restaurant" }) {
-  if (icon === "pool") {
-    return <IoWaterOutline size={22} />;
-  }
-
-  if (icon === "events") {
-    return <IoCalendarOutline size={22} />;
-  }
-
-  return <IoRestaurantOutline size={22} />;
-}
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -139,109 +108,89 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function RestoranPage() {
-  const locale: Locale = await getLocale();
+  const locale = await getLocale();
   const t = content[locale];
 
   return (
     <main>
-      <PageHeader title={t.title} subtitle={t.subtitle} locale={locale} />
+      <PageHeader kicker={t.kicker} title={t.title} lede={t.lede}>
+        <Link href="/meni" className="button button-dark">
+          {t.menuCta}
+        </Link>
+        <a href={site.phoneHref} className="text-link">
+          {site.phone}
+        </a>
+      </PageHeader>
 
-      <section className={styles.introSection}>
-        <div className={styles.container}>
-          <div className={styles.introGrid}>
-            <Reveal>
-              <div className={styles.imageWrap}>
+      <div className="container">
+        <div className={styles.heroImage}>
+          <Image
+            src={`${gallery}/booking-galerija-10-69631083.jpg`}
+            alt={t.heroAlt}
+            fill
+            priority
+            sizes="(max-width: 1280px) 100vw, 1200px"
+            className={styles.cover}
+          />
+        </div>
+      </div>
+
+      <section className={styles.sections}>
+        <div className={`container ${styles.rows}`}>
+          {t.sections.map((section, index) => (
+            <article
+              className={`${styles.row} ${index % 2 === 1 ? styles.rowFlip : ""}`}
+              id={section.id}
+              key={section.id}
+            >
+              <div className={styles.rowImage}>
                 <Image
-                  src="/booking/ivanjicki-konaci/gallery/booking-galerija-10-69631083.jpg"
-                  alt={t.imageAlt}
+                  src={section.image}
+                  alt={section.alt}
                   fill
-                  priority
-                  className={styles.image}
-                  sizes="(max-width: 900px) 100vw, 52vw"
+                  sizes="(max-width: 900px) 100vw, 55vw"
+                  className={styles.cover}
                 />
               </div>
-            </Reveal>
-
-            <Reveal delay={0.1} className={styles.copyBlock}>
-              <span className={styles.label}>{t.label}</span>
-              <h2 className={styles.heading}>{t.heading}</h2>
-              <p className={styles.text}>{t.intro}</p>
-
-              <ul className={styles.highlights}>
-                {t.highlights.map((highlight) => (
-                  <li key={highlight}>{highlight}</li>
-                ))}
-              </ul>
-
-              <div className={styles.actions}>
-                <Link href="/meni" className={styles.primaryCta}>
-                  <IoRestaurantOutline size={18} />
-                  {t.menuCta}
-                </Link>
-                <a href="tel:+381606130776" className={styles.secondaryCta}>
-                  <IoCallOutline size={18} />
-                  {t.phoneCta}
-                </a>
-                <a
-                  href="mailto:ivanjicki.konaci@gmail.com"
-                  className={styles.secondaryCta}
-                >
-                  <IoMailOutline size={18} />
-                  {t.emailCta}
-                </a>
+              <div className={styles.rowText}>
+                <h2 className={styles.rowTitle}>{section.title}</h2>
+                <p>{section.text}</p>
+                {section.link && (
+                  <Link href={section.link.href} className="text-link">
+                    {section.link.label}
+                  </Link>
+                )}
               </div>
-            </Reveal>
-          </div>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className={styles.featuresSection}>
-        <div className={styles.container}>
-          <div className={styles.featuresGrid}>
-            {t.sections.map((section, index) => (
-              <Reveal
-                className={styles.featureCard}
-                delay={index * 0.08}
-                key={section.title}
-              >
-                <div className={styles.cardImageWrap}>
-                  <Image
-                    src={section.image}
-                    alt={section.alt}
-                    fill
-                    className={styles.image}
-                    sizes="(max-width: 900px) 100vw, 33vw"
-                  />
-                </div>
-                <div className={styles.cardBody}>
-                  <span className={styles.iconWrap}>
-                    <FeatureIcon icon={section.icon} />
-                  </span>
-                  <h3 className={styles.cardTitle}>{section.title}</h3>
-                  <p className={styles.cardText}>{section.text}</p>
-                </div>
-              </Reveal>
+      <section className={styles.photosSection} aria-labelledby="restaurant-photos">
+        <div className="container">
+          <h2 className={styles.photosTitle} id="restaurant-photos">
+            {t.photosTitle}
+          </h2>
+          <ul className={styles.photos}>
+            {t.photos.map((photo) => (
+              <li key={photo.src}>
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(max-width: 760px) 50vw, 25vw"
+                  className={styles.cover}
+                />
+              </li>
             ))}
-          </div>
+          </ul>
+          <Link href="/galerija" className="text-link">
+            {locale === "sr" ? "Sve fotografije" : "All photos"}
+          </Link>
         </div>
       </section>
 
-      <section className={styles.eventSection}>
-        <div className={styles.container}>
-          <Reveal className={styles.eventBand}>
-            <div>
-              <span className={styles.eventLabel}>{t.eventLabel}</span>
-              <h2 className={styles.eventHeading}>{t.eventHeading}</h2>
-            </div>
-            <p className={styles.eventText}>{t.eventText}</p>
-            <Link href="/kontakt" className={styles.eventCta}>
-              {locale === "sr" ? "Kontakt" : "Contact"}
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
-      <CallToAction locale={locale} />
+      <BookingBand locale={locale} />
     </main>
   );
 }

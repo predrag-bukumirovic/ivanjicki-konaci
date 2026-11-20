@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(20, 19, 17, 0.96);
   padding: 24px;
 
   @media (max-width: 640px) {
@@ -45,7 +45,7 @@
   left: 24px;
   color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
-  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
 
   @media (max-width: 640px) {
     top: 24px;
@@ -99,14 +99,4 @@
   position: relative;
   width: min(1100px, 90vw);
   height: min(720px, 80vh);
-}
-
-.caption {
-  position: absolute;
-  bottom: -36px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 14px;
 }

@@ -1,0 +1,51 @@
+.track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  height: 2px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.bar {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+// Fast at first, then slows down — it never "finishes" until the page is there.
+.loading {
+  opacity: 1;
+
+  .bar {
+    animation: trickle 8s cubic-bezier(0.1, 0.7, 0.2, 1) forwards;
+  }
+}
+
+.done {
+  opacity: 0;
+  transition: opacity 0.3s ease 0.2s;
+
+  .bar {
+    transform: scaleX(1);
+    transition: transform 0.2s ease;
+  }
+}
+
+@keyframes trickle {
+  0% {
+    transform: scaleX(0);
+  }
+
+  10% {
+    transform: scaleX(0.4);
+  }
+
+  100% {
+    transform: scaleX(0.9);
+  }
+}

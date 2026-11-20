@@ -2,43 +2,42 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import LegalContent from "@/components/LegalContent/LegalContent";
 import { getLocale } from "@/lib/server-locale";
-import type { Locale } from "@/lib/i18n";
 
 const content = {
   sr: {
     metadata: {
-      title: "Politika Privatnosti | Ivanjički Konaci",
+      title: "Politika privatnosti | Ivanjički konaci",
       description: "Kako Ivanjički Konaci prikupljaju i koriste vaše podatke.",
     },
-    title: "Politika Privatnosti",
+    title: "Politika privatnosti",
     updated: "25. avgust 2026.",
     sections: [
       {
-        heading: "1. Koje Podatke Prikupljamo",
+        heading: "1. Koje podatke prikupljamo",
         paragraphs: [
           "Prilikom rezervacije ili slanja upita putem kontakt forme, prikupljamo podatke koje nam sami dostavite: ime i prezime, email adresu, broj telefona i sadržaj poruke.",
         ],
       },
       {
-        heading: "2. Kako Koristimo Vaše Podatke",
+        heading: "2. Kako koristimo vaše podatke",
         paragraphs: [
           "Podatke koristimo isključivo u svrhu obrade rezervacija, komunikacije sa gostima i unapređenja naših usluga. Ne prosleđujemo vaše podatke trećim licima bez vaše saglasnosti, osim kada je to zakonski obavezno.",
         ],
       },
       {
-        heading: "3. Čuvanje Podataka",
+        heading: "3. Čuvanje podataka",
         paragraphs: [
           "Vaše podatke čuvamo onoliko dugo koliko je potrebno za svrhu radi koje su prikupljeni, odnosno u skladu sa zakonskim obavezama.",
         ],
       },
       {
-        heading: "4. Kolačići (Cookies)",
+        heading: "4. Kolačići (cookies)",
         paragraphs: [
           "Sajt može koristiti osnovne kolačiće u svrhu ispravnog funkcionisanja i poboljšanja korisničkog iskustva. Onemogućavanjem kolačića u vašem pretraživaču, pojedine funkcionalnosti sajta mogu biti ograničene.",
         ],
       },
       {
-        heading: "5. Vaša Prava",
+        heading: "5. Vaša prava",
         paragraphs: [
           "Imate pravo da zatražite uvid, izmenu ili brisanje svojih ličnih podataka koje čuvamo. Zahtev možete poslati na ivanjicki.konaci@gmail.com.",
         ],
@@ -53,26 +52,26 @@ const content = {
   },
   en: {
     metadata: {
-      title: "Privacy Policy | Ivanjicki Konaci",
+      title: "Privacy policy | Ivanjicki Konaci",
       description: "How Ivanjicki Konaci collects and uses your data.",
     },
-    title: "Privacy Policy",
+    title: "Privacy policy",
     updated: "August 25, 2026",
     sections: [
       {
-        heading: "1. What Data We Collect",
+        heading: "1. What data we collect",
         paragraphs: [
           "When you make a reservation or send an inquiry through the contact form, we collect the information you provide: full name, email address, phone number and message content.",
         ],
       },
       {
-        heading: "2. How We Use Your Data",
+        heading: "2. How we use your data",
         paragraphs: [
           "We use the data only to process reservations, communicate with guests and improve our services. We do not share your data with third parties without your consent, except where required by law.",
         ],
       },
       {
-        heading: "3. Data Retention",
+        heading: "3. Data retention",
         paragraphs: [
           "We keep your data for as long as necessary for the purpose for which it was collected, or in line with legal obligations.",
         ],
@@ -84,7 +83,7 @@ const content = {
         ],
       },
       {
-        heading: "5. Your Rights",
+        heading: "5. Your rights",
         paragraphs: [
           "You have the right to request access to, correction of or deletion of the personal data we store. You can send a request to ivanjicki.konaci@gmail.com.",
         ],
@@ -105,13 +104,17 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function PolitikaPrivatnostiPage() {
-  const locale: Locale = await getLocale();
+  const locale = await getLocale();
   const t = content[locale];
 
   return (
     <main>
-      <PageHeader title={t.title} locale={locale} />
-      <LegalContent updated={t.updated} sections={t.sections} locale={locale} />
+      <PageHeader
+        kicker={locale === "sr" ? "Pravne informacije" : "Legal"}
+        title={t.title}
+        lede={`${locale === "sr" ? "Poslednja izmena" : "Last updated"}: ${t.updated}`}
+      />
+      <LegalContent sections={t.sections} />
     </main>
   );
 }

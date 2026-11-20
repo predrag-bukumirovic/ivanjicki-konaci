@@ -1,30 +1,30 @@
 import type { Metadata } from "next";
-import PageHeader from "@/components/PageHeader/PageHeader";
 import GalleryGrid from "@/components/GalleryGrid/GalleryGrid";
+import PageHeader from "@/components/PageHeader/PageHeader";
 import { getGalleryImages } from "@/data/gallery";
 import { getLocale } from "@/lib/server-locale";
-import type { Locale } from "@/lib/i18n";
 import styles from "./page.module.scss";
 
 const content = {
   sr: {
     metadata: {
-      title: "Galerija | Ivanjički Konaci",
+      title: "Galerija | Ivanjički konaci",
       description:
-        "Pogledajte fotografije iz Booking galerije objekta Ivanjički Konaci.",
+        "Fotografije bazena, terasa, imanja i hrane iz restorana Ivanjičkih konaka.",
     },
-    title: "Galerija",
-    subtitle:
-      "Pogledajte fotografije iz glavne Booking galerije objekta Lux smeštaj Ivanjički konaci.",
+    kicker: "Galerija",
+    title: "Fotografije",
+    lede: "Bazen, terase, staze kroz voćnjak i hrana iz našeg restorana. Kliknite na fotografiju za veći prikaz.",
   },
   en: {
     metadata: {
       title: "Gallery | Ivanjicki Konaci",
-      description: "View photos from the Booking gallery for Ivanjicki Konaci.",
+      description:
+        "Photos of the pool, terraces, grounds and restaurant food at Ivanjicki Konaci.",
     },
-    title: "Gallery",
-    subtitle:
-      "View photos from the main Booking gallery for Lux Accommodation Ivanjicki Konaci.",
+    kicker: "Gallery",
+    title: "Photos",
+    lede: "The pool, terraces, orchard paths and food from our restaurant. Tap a photo to see it larger.",
   },
 } as const;
 
@@ -34,21 +34,16 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function GalerijaPage() {
-  const locale: Locale = await getLocale();
+  const locale = await getLocale();
   const t = content[locale];
-  const galleryImages = getGalleryImages(locale);
 
   return (
     <main>
-      <PageHeader
-        title={t.title}
-        subtitle={t.subtitle}
-        locale={locale}
-      />
+      <PageHeader kicker={t.kicker} title={t.title} lede={t.lede} />
 
       <section className={styles.section}>
-        <div className={styles.container}>
-          <GalleryGrid images={galleryImages} locale={locale} />
+        <div className="container">
+          <GalleryGrid images={getGalleryImages(locale)} locale={locale} />
         </div>
       </section>
     </main>

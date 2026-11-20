@@ -1,90 +1,140 @@
 .footer {
-  background: #000;
-  color: #fff;
-  padding: 64px 40px 28px;
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.92);
+  padding-top: 72px;
 
   @media (max-width: 640px) {
-    padding: 48px 20px 24px;
+    padding-top: 52px;
   }
-}
-
-.container {
-  max-width: 1320px;
-  margin: 0 auto;
 }
 
 .top {
   display: grid;
-  grid-template-columns: 1.3fr 0.8fr 1.3fr 0.8fr;
-  gap: 24px;
+  grid-template-columns: 1.6fr repeat(3, 1fr);
+  gap: 40px;
   padding-bottom: 56px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  margin-bottom: 24px;
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    row-gap: 32px;
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
   }
-}
 
-.col {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-  font-size: 16px;
-  line-height: 1.7;
+  // Phones: pages + social side by side, contact on its own full-width row
+  // so the email address never breaks mid-word.
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "brand brand"
+      "pages social"
+      "contact contact";
+    row-gap: 36px;
+    padding-bottom: 40px;
 
-  a {
-    color: inherit;
-    transition: color 0.2s ease;
+    .brandCol {
+      grid-area: brand;
+    }
 
-    &:hover {
-      color: #c1c1c1;
+    .pages {
+      grid-area: pages;
+    }
+
+    .social {
+      grid-area: social;
+    }
+
+    .contact {
+      grid-area: contact;
     }
   }
 }
 
-.colTitle {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #826953;
-  margin-bottom: 10px;
-}
-
-.bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  font-size: 15px;
-
-  @media (max-width: 640px) {
-    flex-direction: column;
-    align-items: flex-start;
+.brandCol {
+  @media (max-width: 900px) {
+    grid-column: 1 / -1;
   }
 }
 
-.bottomLinks {
-  display: flex;
+.brand {
+  display: inline-flex;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #fff;
+
+  img {
+    padding: 4px;
+    border-radius: 8px;
+    background: #fff;
+  }
+}
+
+.tagline {
+  max-width: 300px;
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.address {
+  margin-top: 10px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.col {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+  }
 
   a {
-    color: inherit;
-    transition: color 0.2s ease;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 0.15s ease;
+    overflow-wrap: break-word;
 
     &:hover {
       color: #fff;
     }
   }
+}
 
-  .credit {
-    padding-left: 24px;
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.75);
+.colTitle {
+  margin-bottom: 16px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-top: 22px;
+  padding-bottom: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.bottomLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+
+  a {
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: #fff;
+    }
   }
 }

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import type { Locale } from "@/lib/i18n";
+import { lockScroll, unlockScroll } from "@/lib/smooth-scroll";
 import styles from "./Lightbox.module.scss";
 
 export type GalleryImage = {
@@ -42,10 +43,10 @@ export default function Lightbox({
       if (e.key === "ArrowRight") goNext();
     };
     document.addEventListener("keydown", onKeyDown);
-    document.body.style.overflow = "hidden";
+    lockScroll();
     return () => {
       document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = "";
+      unlockScroll();
     };
   }, [onClose, goPrev, goNext]);
 
@@ -103,7 +104,6 @@ export default function Lightbox({
             style={{ objectFit: "contain" }}
             priority
           />
-          <span className={styles.caption}>{current.alt}</span>
         </motion.div>
       </AnimatePresence>
 

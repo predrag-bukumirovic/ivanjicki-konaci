@@ -11,13 +11,13 @@ export function normalizeLocale(value: string | null | undefined): Locale {
 export const commonCopy = {
   sr: {
     home: "Početna",
-    rooms: "Konaci",
+    rooms: "Smeštaj",
     restaurant: "Restoran",
     menu: "Meni",
     gallery: "Galerija",
-    about: "O Nama",
+    about: "O nama",
     contact: "Kontakt",
-    bookNow: "Rezerviši Sada",
+    bookNow: "Rezerviši",
     checkAvailability: "Proveri dostupnost",
   },
   en: {
@@ -28,7 +28,16 @@ export const commonCopy = {
     gallery: "Gallery",
     about: "About",
     contact: "Contact",
-    bookNow: "Book Now",
-    checkAvailability: "Check Availability",
+    bookNow: "Book",
+    checkAvailability: "Check availability",
   },
 } as const;
+
+export const navLinks = [
+  { key: "rooms", href: "/konaci" },
+  { key: "restaurant", href: "/restoran" },
+  { key: "menu", href: "/meni" },
+  { key: "gallery", href: "/galerija" },
+  { key: "about", href: "/o-nama" },
+  { key: "contact", href: "/kontakt" },
+] as const;

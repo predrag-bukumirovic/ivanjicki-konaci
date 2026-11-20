@@ -1,194 +1,170 @@
 import type { Locale } from "@/lib/i18n";
 
-export const galleryImages = [
+/**
+ * Photos on the /galerija page — the files in public/img/nove-slike.
+ * Width and height are the display size after EXIF rotation, so the masonry
+ * grid can reserve the right space before each photo loads.
+ * To add a photo: put the file in that folder and add an entry here.
+ */
+const base = "/img/nove-slike";
+
+const photos: {
+  src: string;
+  width: number;
+  height: number;
+  alt: Record<Locale, string>;
+}[] = [
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-01-69639329.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 1"
+    src: `${base}/image00001.jpeg`,
+    width: 1440,
+    height: 1440,
+    alt: { sr: "Popločana staza kroz voćnjak", en: "Paved path through the orchard" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-02-368343781.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 2"
+    src: `${base}/image00002.jpeg`,
+    width: 1440,
+    height: 1439,
+    alt: { sr: "Voće i posluženje pored bazena", en: "Fruit and refreshments by the pool" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-03-368347876.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 3"
+    src: `${base}/image00003.jpeg`,
+    width: 3024,
+    height: 4032,
+    alt: { sr: "Bazen sa okruglim delom za sedenje u vodi", en: "Pool with a round seating area in the water" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-04-35124405.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 4"
+    src: `${base}/image00004.jpeg`,
+    width: 1290,
+    height: 2293,
+    alt: { sr: "Postavljen sto sa hranom", en: "A table set with food" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-05-416006092.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 5"
+    src: `${base}/image00005.jpeg`,
+    width: 1200,
+    height: 1600,
+    alt: { sr: "Bazen i terasa restorana", en: "Pool and restaurant terrace" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-06-370802874.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 6"
+    src: `${base}/image00006.jpeg`,
+    width: 3024,
+    height: 4032,
+    alt: { sr: "Dvorište sa osvetljenjem u sumrak", en: "The garden lit up at dusk" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-07-416006954.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 7"
+    src: `${base}/image00007.jpeg`,
+    width: 3024,
+    height: 4032,
+    alt: { sr: "Staza sa pogledom na brda", en: "Path with a view of the hills" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-08-368345010.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 8"
+    src: `${base}/image00008.jpeg`,
+    width: 3024,
+    height: 4032,
+    alt: { sr: "Pogled na brda i dečije igralište", en: "View of the hills and the playground" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-09-187168983.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 9"
+    src: `${base}/image00009.jpeg`,
+    width: 3024,
+    height: 4032,
+    alt: { sr: "Bazen i zgrade smeštaja", en: "Pool and the guest buildings" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-10-69631083.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 10"
+    src: `${base}/image00010.jpeg`,
+    width: 3024,
+    height: 4032,
+    alt: { sr: "Natkriveno kameno stepenište", en: "Covered stone staircase" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-11-187164939.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 11"
+    src: `${base}/image00011.jpeg`,
+    width: 3648,
+    height: 5472,
+    alt: { sr: "Bazen okružen drvećem", en: "Pool surrounded by trees" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-12-187165353.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 12"
+    src: `${base}/image00012.jpeg`,
+    width: 3648,
+    height: 5472,
+    alt: { sr: "Staza između voćaka", en: "Path between fruit trees" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-13-41959953.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 13"
+    src: `${base}/image00013.jpeg`,
+    width: 3648,
+    height: 5472,
+    alt: { sr: "Voda u bazenu", en: "Pool water up close" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-14-69631186.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 14"
+    src: `${base}/image00014.jpeg`,
+    width: 3024,
+    height: 4032,
+    alt: { sr: "Bazen sa okruglim delom za sedenje", en: "Pool with its round seating area" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-15-69630816.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 15"
+    src: `${base}/image00015.jpeg`,
+    width: 3024,
+    height: 4032,
+    alt: { sr: "Pogled sa imanja na brda", en: "View of the hills from the grounds" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-16-41960977.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 16"
+    src: `${base}/image00016.jpeg`,
+    width: 3024,
+    height: 4032,
+    alt: { sr: "Bazen sa pogledom na brda", en: "Pool overlooking the hills" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-17-41959831.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 17"
+    src: `${base}/image00017.jpeg`,
+    width: 3648,
+    height: 5472,
+    alt: { sr: "Osvetljen bazen noću", en: "The pool lit up at night" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-18-368344076.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 18"
+    src: `${base}/image00018.jpeg`,
+    width: 3648,
+    height: 5472,
+    alt: { sr: "Bazen i terasa noću", en: "Pool and terrace at night" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-19-368348168.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 19"
+    src: `${base}/image00019.jpeg`,
+    width: 1290,
+    height: 2280,
+    alt: { sr: "Doručak na terasi", en: "Breakfast on the terrace" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-20-368348458.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 20"
+    src: `${base}/image00020.jpeg`,
+    width: 1290,
+    height: 2259,
+    alt: { sr: "Jela sa roštilja i pečene paprike", en: "Grilled dishes and roasted peppers" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-21-368348734.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 21"
+    src: `${base}/image00021.jpeg`,
+    width: 1290,
+    height: 2290,
+    alt: { sr: "Posluženje za proslavu", en: "Food served for a celebration" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-22-368349309.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 22"
+    src: `${base}/image00022.jpeg`,
+    width: 1290,
+    height: 1618,
+    alt: { sr: "Pršuta i sir", en: "Prosciutto and cheese" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-23-368349565.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 23"
+    src: `${base}/image00023.jpeg`,
+    width: 3024,
+    height: 4032,
+    alt: { sr: "Terasa sa stolom i stolicama", en: "Terrace with a table and chairs" },
   },
   {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-24-368349960.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 24"
+    src: `${base}/image00024.jpeg`,
+    width: 4284,
+    height: 5712,
+    alt: { sr: "Bazen i voće na ivici bazena", en: "Pool with fruit on its edge" },
   },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-25-368352534.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 25"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-26-368561955.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 26"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-27-368562198.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 27"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-28-368563040.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 28"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-29-370801753.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 29"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-30-370802176.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 30"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-31-370802357.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 31"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-32-370802556.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 32"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-33-370803913.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 33"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-34-423346811.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 34"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-35-423357183.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 35"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-36-423358319.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 36"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-37-423358647.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 37"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-38-423359157.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 38"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-39-423359417.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 39"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-40-423359940.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 40"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-41-423440553.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 41"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-42-423441496.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 42"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-43-423441645.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 43"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-44-423441793.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 44"
-  },
-  {
-    "src": "/booking/ivanjicki-konaci/gallery/booking-galerija-45-423529430.jpg",
-    "alt": "Ivanjicki Konaci - Booking gallery 45"
-  }
 ];
 
 export function getGalleryImages(locale: Locale = "sr") {
-  return galleryImages.map((image, index) => ({
-    src: image.src,
-    alt:
-      locale === "sr"
-        ? `Ivanjički Konaci - Booking galerija ${index + 1}`
-        : `Ivanjicki Konaci - Booking gallery ${index + 1}`,
+  return photos.map((photo) => ({
+    src: photo.src,
+    width: photo.width,
+    height: photo.height,
+    alt: photo.alt[locale],
   }));
 }

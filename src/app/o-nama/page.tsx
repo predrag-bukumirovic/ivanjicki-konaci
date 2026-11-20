@@ -1,48 +1,61 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import BookingBand from "@/components/BookingBand/BookingBand";
 import PageHeader from "@/components/PageHeader/PageHeader";
-import Reveal from "@/components/Reveal/Reveal";
-import StatsBar from "@/components/StatsBar/StatsBar";
-import Testimonials from "@/components/Testimonials/Testimonials";
-import CallToAction from "@/components/CallToAction/CallToAction";
+import Reviews from "@/components/Reviews/Reviews";
+import SectionHead from "@/components/SectionHead/SectionHead";
 import { getLocale } from "@/lib/server-locale";
-import type { Locale } from "@/lib/i18n";
 import styles from "./page.module.scss";
+
+const gallery = "/booking/ivanjicki-konaci/gallery";
 
 const content = {
   sr: {
     metadata: {
-      title: "O Nama | Ivanjički Konaci",
+      title: "O nama | Ivanjički konaci",
       description:
-        "Upoznajte priču iza Ivanjičkih konaka, smeštaja stvorenog za miran boravak u prirodi.",
+        "Ivanjički konaci — smeštaj sa restoranom i bazenom na mirnoj padini nadomak Ivanjice.",
     },
-    title: "O Nama",
-    subtitle:
-      "Verujemo da odmor treba da bude jednostavan, miran i blizu prirode, zato smo stvorili Ivanjičke konake.",
-    imageAlt: "Ivanjički konaci u prirodi",
-    label: "Naša Priča",
-    heading: "Stvoreno Za Ljude Kojima Treba Predah",
-    paragraph1:
-      "Ivanjički konaci su nastali iz želje da ponudimo nešto drugačije od standardnog smeštaja: mesto gde priroda, mir i udobnost dolaze zajedno. Svaki konak je pažljivo pripremljen tako da gostima pruži osećaj bekstva od gradske vreve, bez odricanja od udobnosti.",
-    paragraph2:
-      "Godinama unazad ugostili smo goste iz celog sveta, sarađujemo sa proverenim partnerima u turizmu i svakim danom radimo na tome da naši konaci budu mesto kojem se gosti rado vraćaju.",
+    kicker: "O nama",
+    title: "Mesto za pravi predah",
+    lede: "Smeštaj, restoran i bazen na mirnoj padini nadomak Ivanjice, okruženi voćnjacima i brdima.",
+    imageAlt: "Pogled iz vazduha na Ivanjičke konake i okolna brda",
+    story: [
+      "Ivanjički konaci su nastali iz želje da gostima ponudimo nešto drugačije od standardnog smeštaja: mesto gde se odmara uz pogled, tišinu i dobru hranu, a da se ne odriče udobnosti.",
+      "Na imanju je šest tipova soba, restoran sa domaćom kuhinjom, otvoreni bazen i dečije igralište. Dolaze nam porodice, parovi i društva na proputovanju kroz zapadnu Srbiju, a neki nam se i vraćaju.",
+      "Pored smeštaja organizujemo rođendane, svadbe i porodična okupljanja — u restoranu ili uz bazen.",
+    ],
+    links: [
+      { href: "/konaci", label: "Sobe" },
+      { href: "/restoran", label: "Restoran i bazen" },
+      { href: "/galerija", label: "Galerija" },
+    ],
+    reviewsTitle: "Utisci gostiju",
+    reviewsLede: "Izbor utisaka gostiju sa Booking.com.",
   },
   en: {
     metadata: {
       title: "About | Ivanjicki Konaci",
       description:
-        "Learn the story behind Ivanjicki Konaci, accommodation created for a peaceful stay in nature.",
+        "Ivanjicki Konaci — rooms, a restaurant and a pool on a quiet hillside just outside Ivanjica.",
     },
-    title: "About",
-    subtitle:
-      "We believe rest should be simple, peaceful and close to nature, which is why we created Ivanjicki Konaci.",
-    imageAlt: "Ivanjicki Konaci in nature",
-    label: "Our Story",
-    heading: "Created For People Who Need A Real Break",
-    paragraph1:
-      "Ivanjicki Konaci was created from the wish to offer something different from standard accommodation: a place where nature, calm and comfort come together. Every room is carefully prepared to give guests a sense of escape from city noise, without giving up comfort.",
-    paragraph2:
-      "Over the years we have welcomed guests from around the world, worked with trusted tourism partners, and kept improving the experience so guests are happy to return.",
+    kicker: "About",
+    title: "A place for a real break",
+    lede: "Rooms, a restaurant and a pool on a quiet hillside just outside Ivanjica, surrounded by orchards and hills.",
+    imageAlt: "Aerial view of Ivanjicki Konaci and the surrounding hills",
+    story: [
+      "Ivanjicki Konaci grew out of a wish to offer something different from standard accommodation: a place to rest with a view, quiet and good food, without giving up comfort.",
+      "The property has six room types, a restaurant with home cooking, an outdoor pool and a children's playground. Our guests include families, couples and groups travelling through western Serbia — and some keep coming back.",
+      "Besides accommodation, we host birthdays, weddings and family gatherings — in the restaurant or by the pool.",
+    ],
+    links: [
+      { href: "/konaci", label: "Rooms" },
+      { href: "/restoran", label: "Restaurant and pool" },
+      { href: "/galerija", label: "Gallery" },
+    ],
+    reviewsTitle: "Guest reviews",
+    reviewsLede: "A selection of guest reviews from Booking.com.",
   },
 } as const;
 
@@ -52,47 +65,51 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ONamaPage() {
-  const locale: Locale = await getLocale();
+  const locale = await getLocale();
   const t = content[locale];
 
   return (
     <main>
-      <PageHeader
-        title={t.title}
-        subtitle={t.subtitle}
-        locale={locale}
-      />
+      <PageHeader kicker={t.kicker} title={t.title} lede={t.lede} />
 
       <section className={styles.story}>
-        <div className={styles.container}>
-          <div className={styles.grid}>
-            <Reveal>
-              <div className={styles.imageWrap}>
-                <Image
-                  src="/img/naslovna.png"
-                  alt={t.imageAlt}
-                  fill
-                  priority
-                  className={styles.image}
-                  sizes="(max-width: 900px) 100vw, 50vw"
-                />
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.1}>
-              <span className={styles.label}>{t.label}</span>
-              <h2 className={styles.heading}>{t.heading}</h2>
-              <p className={styles.text}>{t.paragraph1}</p>
-              <p className={styles.text}>{t.paragraph2}</p>
-            </Reveal>
+        <div className={`container ${styles.storyGrid}`}>
+          <div className={styles.image}>
+            <Image
+              src={`${gallery}/booking-galerija-07-416006954.jpg`}
+              alt={t.imageAlt}
+              fill
+              priority
+              sizes="(max-width: 900px) 100vw, 55vw"
+              className={styles.cover}
+            />
           </div>
 
-          <StatsBar locale={locale} />
+          <div className={styles.text}>
+            {t.story.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+            <ul className={styles.links}>
+              {t.links.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-link">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
-      <Testimonials locale={locale} />
-      <CallToAction locale={locale} />
+      <section className={styles.reviews} id="utisci">
+        <div className="container">
+          <SectionHead title={t.reviewsTitle}>{t.reviewsLede}</SectionHead>
+          <Reviews locale={locale} />
+        </div>
+      </section>
+
+      <BookingBand locale={locale} />
     </main>
   );
 }

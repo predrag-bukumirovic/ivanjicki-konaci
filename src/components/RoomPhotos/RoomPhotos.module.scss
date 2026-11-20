@@ -1,0 +1,92 @@
+.photos {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--wash);
+}
+
+.track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:focus-visible {
+    outline-offset: -3px;
+  }
+}
+
+.slide {
+  position: relative;
+  flex: 0 0 100%;
+  aspect-ratio: 4 / 3;
+  scroll-snap-align: start;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.counter {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 4px 9px;
+  border-radius: 6px;
+  background: rgba(28, 27, 24, 0.72);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition:
+    opacity 0.15s ease,
+    background 0.15s ease;
+
+  &:hover {
+    background: #fff;
+  }
+
+  &:focus-visible {
+    opacity: 1;
+  }
+
+  .photos:hover & {
+    opacity: 1;
+  }
+
+  // Touch screens swipe instead.
+  @media (hover: none) {
+    display: none;
+  }
+}
+
+.prev {
+  left: 12px;
+}
+
+.next {
+  right: 12px;
+}
