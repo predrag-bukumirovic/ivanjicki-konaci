@@ -3,8 +3,10 @@
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
-  // Ends at `transform: none`, so it leaves no containing block behind for fixed/sticky children.
-  animation: pageIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  // Fill mode must be `backwards`, not `both`: a transform animation that stays
+  // "in effect" afterwards turns this wrapper into the containing block for every
+  // position: fixed child (the gallery lightbox opened at the top of the page, off screen).
+  animation: pageIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 
   @media (prefers-reduced-motion: reduce) {
     animation: none;

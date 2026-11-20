@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
@@ -52,7 +53,9 @@ export default function Lightbox({
 
   const current = images[index];
 
-  return (
+  // Rendered straight into <body> so no transformed ancestor can turn
+  // `position: fixed` into "fixed to that ancestor" (it must cover the viewport).
+  return createPortal(
     <motion.div
       className={styles.backdrop}
       onClick={onClose}
@@ -118,6 +121,7 @@ export default function Lightbox({
       >
         <FiChevronRight size={24} />
       </button>
-    </motion.div>
+    </motion.div>,
+    document.body,
   );
 }
