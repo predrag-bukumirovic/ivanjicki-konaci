@@ -1,12 +1,12 @@
 import type { Locale } from "@/lib/i18n";
 
 /**
- * Photos on the /galerija page — the files in public/img/nove-slike.
+ * Photos on the /galerija page — the image000NN files in public/booking/ivanjicki-konaci/gallery.
  * Width and height are the display size after EXIF rotation, so the masonry
  * grid can reserve the right space before each photo loads.
  * To add a photo: put the file in that folder and add an entry here.
  */
-const base = "/img/nove-slike";
+const base = "/booking/ivanjicki-konaci/gallery";
 
 const photos: {
   src: string;
